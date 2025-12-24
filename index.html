@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Techpronostiques</title>
+    <title>Techpronos</title>
 </head>
 <style>
-    body{
-        font-family:bold;
-    header {
-        background: #0a3d62;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        outline: none;
+        border: none;
+        font-family: system-ui;
+    }
+    
+    
+/*--------//--------/ TETES /---------//--------*/
+  header {
+        background:  #0b1220;
         color: #fff;
-        text-align: center;
-        padding: 1em 1em;
-        border-radius: 5px;
+        font-size: 12px;
+        position: fixed;
+        width: 100%;
+        padding: 1rem 1rem;
+        height: 100px;
         box-shadow: 0 2px 10px rgba(10, 61, 98, 0.3);
+        z-index: 1000;
+        transition: all 0.3s;
     }
     header h1 {
         font-size: 2.0em;
         margin: 0;
-        color: #74b9ff;
+        color: #F06292;
     }
-    header p {
-        margin: 0.5em 0 1em;
-        color: #a2b1c6;
-        font-style: italic;
+    h1 span{
+        color: #40c4ff;
     }
     nav {
-        background: #dfe6e9;
+        font-size: 15px;
         display: flex;
         justify-content: center;
         padding: 1em;
@@ -35,29 +47,30 @@
         border-radius: 8px;
     }
     nav a {
-        color: #0a3d62;
+        color: white;
         text-decoration: none;
         font-weight: bold;
-        margin: 10px;
-        font-size: 1.0em;
+        margin: 8px;
+        font-size: 0.9em;
         transition: color 0.3s, transform 0.2s;
         perspective: 500px;
     }
     nav a:active {
         transform: rotateX(15deg) translateZ(5px);
-        color: #0984e3;
+        color: #F06292;
         transition: transform 0.1s;
     }
     nav a:hover {
-        color: #0984e3;
+        color: #F06292;
     }
+    
+    
+/*-------//-------/ SECTIONS /--------//--------*/
     section {
         display: none;
-        max-width: 900px;
-        margin: 2em auto;
-        padding: 2em;
-        background: #B3E5FC;
-        border-radius: 12px;
+        max-width: 500px;
+        padding: 9em 1em;
+        background-color: #0e1727;
         box-shadow: 0 4px 12px rgba(10, 61, 98, 0.1);
         color: #222;
     }
@@ -76,10 +89,11 @@
         font-size: 17px;
         max-width: 700px;
         margin: auto;
-        color: black;
+        color: white;
         font-weight: 400;
     }
-    /* === ANIMATION DU TEXTE SUR L'ACCUEIL === */
+    
+/* === ANIMATION DU TEXTE SUR L'ACCUEIL === */
     #accueil h2 {
         animation: slideInFromLeft 1s ease forwards;
     }
@@ -127,17 +141,17 @@
     }
     .client {
         font-size: 14px;
-        background: #B3E5FC;
+        background:  #0e1727;
         height: 6%;
         color: #ce4b49;
         font-weight: 500;
     }
     .client span {
-        color: #ff8a65;
+        color: white;
         opacity: 0.9;
     }
     .client span1 {
-        color: #ff8a65;
+        color: white;
         opacity: 0.9;
     }
     footer {
@@ -145,7 +159,6 @@
         background: #0a3d62;
         color: #a2b1c6;
         padding: 1em;
-        margin-top: 3em;
         font-size: 0.9em;
         border-radius: 0 0 12px 12px;
     }
@@ -187,6 +200,27 @@
         background: #FFCDD2;
         border-radius: 3px;
     }
+    .faq-question {
+        width: 100%;
+        color: black;
+        padding: 1rem;
+        text-align: left;
+        background: #f9f9f9;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .faq-answer {
+        display: none;
+        padding: 1rem;
+        font-size: 15px;
+        text-align: center;
+        color: black;
+        background: #FFCDD2;
+        border-radius: 3px;
+    }
     h3 {
         color: #0984e3;
         font-size: 19px;
@@ -196,23 +230,25 @@
     select:focus,
     textarea:focus {
         outline: none;
+        color: white;
         border-color: #2196F3;
         box-shadow: 0 0 8px #42A5F5;
         background-color: transparent;
     }
     textarea {
         background-color: transparent;
+        color: white;
         resize: vertical;
         min-height: 120px;
     }
     input[type="number"],
     input[type="text"] {
-        width: 108%;
+        width: 100%;
         padding: 12px 15px;
         background-color: transparent;
         border: 1px solid #2196F3;
         border-radius: 8px;
-        color: black;
+        color: white;
         font-size: 1.1em;
         box-sizing: border-box;
         outline: none;
@@ -237,7 +273,7 @@
         font-size: 1.1em;
         font-weight: bold;
         cursor: pointer;
-        width:100%;
+        width: 100%;
         transition: background-color 0.3s ease;
     }
     input, button {
@@ -247,20 +283,23 @@
         border-radius: 5px;
         border: none;
     }
+    
+    
+/*-------//-------/ CONTACTS /--------//-------*/
     .name {
-        color: black;
+        color: white;
         font-weight: bold;
         margin-bottom: 0.3rem;
         opacity: 0.7;
     }
     .sujet {
-        color: black;
+        color: white;
         font-weight: bold;
         margin-bottom: 0.3rem;
         opacity: 0.7;
     }
     .msg {
-        color: black;
+        color: white;
         font-weight: bold;
         margin-bottom: 0.3rem;
         opacity: 0.7;
@@ -275,6 +314,9 @@
         font-size: 1rem;
         background: transparent;
     }
+    
+    
+/*-------//--------/ AVIATORS /--------//-------*/
     .icon {
         text-align: center;
         font-size: 53px;
@@ -291,15 +333,14 @@
         color: white;
     }
     .login-box input {
-        width: 80%;
-        height: 10px;
+        width: 92%;
         outline: none;
         background-color: transparent;
         border: 1px solid #42A5F5;
         border-radius: 40px;
         font-size: 16px;
         color: black;
-        padding: 20px;
+        padding: 10px ;
     }
     .login-box input::placeholder {
         color: gray;
@@ -308,26 +349,11 @@
     .login-box h5 {
         color: #29B6F6;
         text-align: center;
-        font-size: 24px;
-    }
-    .hint {
-        font-size: 15px;
-        color: black;
-        margin-top: 15px;
-        opacity: 0.6;
-    }
-    h9 {
-        font-size: 14px;
-        font-weight: 500;
-        color: white;
-        background-color: rgb(148, 7, 7);
-        border-radius: 6px;
-        text-align: center;
-        padding: 2px 5px;
+        font-size: 23px;
     }
     .teams {
         font-size: 16px;
-        color: black;
+        color: white;
         opacity: 0.7;
     }
     .teams span {
@@ -345,7 +371,7 @@
     }
     .info span1 {
         font-size: 16px;
-        color: black;
+        color: white;
         font-weight: 700;
         opacity: 0.6;
     }
@@ -362,7 +388,7 @@
         color: #2196F3;
     }
     .live {
-        color: black;
+        color: white;
         opacity: 0.7;
     }
     .live span {
@@ -380,7 +406,7 @@
     }
     .match span1 {
         font-size: 16px;
-        color: black;
+        color: white;
         font-weight: 700;
         opacity: 0.6;
     }
@@ -392,7 +418,7 @@
     }
     .strate {
         font-size: 16px;
-        color: black;
+        color: white;
         opacity: 0.7;
     }
     .strate span {
@@ -407,14 +433,10 @@
     .strategie span {
         color: #2196F3;
     }
-    .verifier {
-        font-weight: 500;
-        color: red;
-        opacity: 0.7;
-    }
-    .verifier span {
-        color: black;
-        font-weight: 700;
+    .subtitle  {
+        margin: 0.5em 0 1em;
+        color: #a2b1c6;
+        font-style: italic;
     }
     body h7 {
         justify-content: center;
@@ -428,12 +450,12 @@
         padding: 10px;
         border-radius: 10px;
         color: white;
-        8height: 100px;
-        opacity: 0.7;
+        height: 100px;
+        opacity: 0.6;
         font-weight: bold;
     }
     li span {
-        color: black;
+        color: white;
         opacity: 0.5;
     }
     p {
@@ -443,10 +465,10 @@
     .prediction-title {
         font-size: 1.2em;
         margin: 10;
-        lettre-spacing: 2px;
         color:  #2e7d32;
         margin-bottom: 20px;
         padding: 5px;
+        font-size: 19px;
         border-radius: 10px;
         text-align: center;
     }
@@ -477,33 +499,214 @@
         border-radius: 10px;
         width: 0%;
     }
-        .games h7 {
-        font-size: 14px;
-        font-weight: 500;
+    .games h7 {
+        font-size: 16px;
+        font-weight: 600;
     }
-        h7 span {
-        color: #f44336
-        }
+    .games h7 span {
+        color: #0984e3;
+    }
     .games h8 {
         background: black;
         color: white;
-        padding: 3px 10px;
+        padding: 5px 10px;
         font-size: 16px;
         font-weight: 600;
         border-radius: 3px;
     }
+
+    .form-title {
+        text-align: center;
+        color: #333;
+        color: #764ba2;
+        margin-bottom: 30px;
+        font-size: 26px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .form-title span {
+        color:  #667eea;
+    }
+
+    .form-title::before {
+        content: '';
+        position: absolute;
+        height: 3px;
+        left: 0%;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #71b7e6, #9b5b);
+        }
+    .texte{
+        font-size: 17px;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    
+/*------//------/ NOTIFICATIONS /-------//------*/
+    .notification {
+        position: fixed;
+        bottom: 50px;
+        right: 10px;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        animation:bounce 0.5s ease-in-out infinite;
+        z-index: 9999;
+    }
+    .notification-text {
+        flex: 1;
+    }
+    .notification-text h4 {
+        margin: 0;
+        font-size: 16px;
+        color: black;
+    }
+    .notification-text z {
+        margin: 3px 0 0;
+        font-size: 14px;
+        color: #555;
+    }
+    .notification-text span{
+        color: red;
+        opacity: 0.5;
+    }
+    .title{
+        color: red;
+        text-align: center;
+    }
+    
+    
+/*---------//--------/ PUBS /---------//--------*/
+    .video {
+        width:80%;
+        margin:10%; 
+        padding:4rem 1rem;
+        text-align:center;
+    }
+    .video iframe {
+        width:80%;
+        max-width:800px; 
+        height:300px; 
+        border:none; 
+        border-radius:12px;
+    }
+    .pubs{
+        max-width:1000px;
+        margin:2rem aauto
+        padding:0 1rem;
+    }
+    .pubs h5 {
+        color: white;
+        font-size: 27px;
+    }
+    .pubs iframe{
+        width:100%;
+        height:400px;
+        border:0;
+        border-radius:8ppx
+        box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    
+/*-------//-------/ SERVICES /-------//--------*/
+    .services {
+        max-width: 1200px;
+        margin: auto;
+        padding: 4rem 1rem;
+    }
+    .services-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .grid {
+        display: grid;
+        gap: 2rem;
+    }
+@media(min-width:768px) {
+    .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }}
+@media(min-width:992px) {
+    .grid-3 {
+            grid-template-columns: repeat(3,1fr);
+        }}
+    .service-card {
+        background: transparent;
+        color: #F06292;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #F06292;
+    }
+    .service-icon {
+        font-size: 2rem;
+        color: #1e3c72;
+        margin-bottom: 1rem;
+    }
+    .service-card h3 {
+        margin-bottom: 0.5rem;
+    }
+    .service-card ul {
+        padding-left: 1rem;
+    }
+    .service-card lu {
+        margin: 0.9rem 0;
+        color: white;
+    }
+@media(max-width:768px) {
+    .grid-3 {
+            grid-template-columns: 1fr;
+        }}
+    .services-header p {
+        color: white;
+    }
+    
+    
+/*-------//------/ PRONOSTIQUES /-------//------*/
+    .direct{
+        text-align: center;
+        background: red;
+        color: white;
+        width: 15%;
+        padding: 5px 1px;
+        border-radius: 4px;
+        font-size: 20px
+    }
+    .pronos{
+        text-align: center;
+        font-size: 15px;
+        color: yellow;
+        opacity: 0.7;
+    }
+    .case {
+        background-color: transparent;
+        text-align: center;
+        padding: 10px 3px;
+        border-radius: 6px;
+        margin: 5px;
+        outline: none;
+        color: #EF9A9A;
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #42A5F5;
+    }
     .case p {
-        text-align: left;
         background: #EF5350;
         color: white;
         font-weight: 400;
         padding: 3px;
         font-size: 14px;
-        width: 27%;
+        width: 40%;
         border-radius: 3px;
     }
     .case p1 {
-        color: black;
+        color: white;
         font-size: 17px;
         font-weight: 600;
     }
@@ -511,6 +714,13 @@
         color: #757575;
         font-weight: 300;
         font-size: 14px;
+    }
+    .case p4{
+        color: #a2b1c6;
+        font-style: italic;
+    }
+    p4 span {
+        color: red;
     }
     .bet-options {
         display: flex;
@@ -537,25 +747,39 @@
         font-weight: bold;
         color: #28a745;
     }
-    p4 span {
-        color: red;
+    h4 {
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
     }
+    h5{
+        text-align: center;
+        color: #28a745;
+        font-size: 19px;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0);}
+        50% {transform: translateY(-8px);}
 </style>
 <body>
+    
+<!--------//---------/ TETES /---------//-------->
     <header>
-        <h1>Eskel Pronostiques</h1>
-        <p id="subtitle">
-            Matchs bien analyser sur le Site de Bet261.mg
-        </p>
+        <h1>Eskel <span>Pronostiques</span></h1>
+        <nav>
+            <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
+            <a href="#Pronostiques" onclick="showSection('pronostique')">Pronostiques</a>
+            <a href="#Tours" onclick="showSection('tours')">Tours</a>
+            <a href="#contact" onclick="showSection('contact')">Contacts</a>
+            <a href="#services" onclick="showSection('services')">Services</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
-        <a href="#Pronostiques" onclick="showSection('pronostique')">Pronostiques</a>
-        <a href="#Aviator" onclick="showSection('aviator')">Aviators</a>
-        <a href="#contact" onclick="showSection('contact')">Contacts</a>
-    </nav>
-
+<!--------//--------/ ACCUEIL /--------//-------->
     <section id="accueil" class="active">
         <h2>Bienvenue</h2>
         <div class="hero">
@@ -575,46 +799,49 @@
                 Whats up: <span>+261347105558</span> Email : <span1>mickaelrakotoharilala@gmail.com</span1>
             </div>
         </div>
+        <div class="video" id="video">
+            <h5>PUBS</h5>
+            <iframe src="https://www.youtube.com/embed/dFUlAQZB9Ng" allowfullscreen></iframe>
+        </div>
         <div class="faq">
             <h4>Questions fréquentes</h4>
             <div class="faq-item">
-                <button class="faq-question">Est-ce-que cette Pronostiques est base sur des Strategies ? <span>▼</span></button>
+                <button class="faq-question">Cette Pronostiques est-il bases sur des Strategies ? <span>▼</span></button>
                 <div class="faq-answer">
                     <p>
-                        Cette Pronostique est base sur des Strategies d'Eskel, donc elle n'est pas garentie à 100% .
+                        Cette Pronostiques est basés sur des Strategies d'Eskel, donc elle n'est pas garentie à 100% .
                     </p>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Est-ce-que l'aviator est tres bonne en prediction ? <span>▼</span></button>
+                <button class="faq-question">Est-ce-que ce site  est  bonne en prediction ? <span>▼</span></button>
                 <div class="faq-answer">
                     <p>
-                        Non , mais il faut suivre les Strategies avant de calculer pour que les Tours sont stables .
+                        Ce site est une pronostiques d'Eskel, donc son strategie est basés sur cette pronostiques .
                     </p>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Ou se trouve les Strategies ? <span>▼</span></button>
+                <button class="faq-question">Pour plus d'info ? <span>▼</span></button>
                 <div class="faq-answer">
                     <p>
-                        Click sur Aviators puis entrer les identifiants, les strategies se trouve a l'exterieure .
+                        Click sur contact ou envoyer nous des messages privés a l'aide de nos services .
                     </p>
                 </div>
             </div>
         </div>
     </section>
-
+    
+<!------//-------/ PRONOSTIQUES /-------//------->
     <section id="pronostique">
-        <div class="games">
-            <h8>Live</h8>
-            <h7>PRONOSTIQUES DU JOURS <span>(19/10/25):</span></h7>
-        </div>
+            <h1 class="direct">Live</h1>
+            <h1 class="pronos">PRONOSTIQUES DU JOURS (12/10/25) </h1>
         <div class="case">
             <p>
-                Aujourd’hui -13: 30
+                Aujourd’hui -15:30
             </p>
-            <p1>Come 1907 - Juventus de Turin</p1><br>
-            <p2>Italie, Serie A</p2>
+            <p1>Burkina Faso - Guinee Equatoriale</p1><br>
+            <p2>International, Coupe d'Afrique des Nations</p2>
             <div class="bet-options">
                 <div class="option">
                     <span class="label">1</span>
@@ -626,64 +853,64 @@
                 </div>
                 <div class="option">
                     <span class="label">2</span>
-                    <span class="odd">Gagne</span>
+                    <span class="odd">Perde</span>
                 </div>
             </div>
-            <p4>• Double Chance : <span> 12 </span></p4>
+            <p4>• Nombre de Buts: <span>2-3</span></p4>
         </div>
 
         <div class="case">
             <p>
-                Aujourd’hui -15:00
+                Aujourd’hui -18:00
             </p>
-            <p1>CF Elche - Atletic Bilbao</p1><br>
-            <p2>Espagne, Laliga</p2>
+            <p1>Algerie - Soudan</p1><br>
+            <p2>International, Coupe d'Afrique des Nations</p2>
             <div class="bet-options">
                 <div class="option">
                     <span class="label">1</span>
-                    <span class="odd">Perde</span>
+                    <span class="odd">Gagne</span>
                 </div>
                 <div class="option draw">
                     <span class="label">X</span>
-                    <span class="odd">Gagne</span>
+                    <span class="odd">Perde</span>
                 </div>
                 <div class="option">
                     <span class="label">2</span>
-                    <span class="odd">Gagne</span>
+                    <span class="odd">Perde</span>
                 </div>
             </div>
-            <p4>• Double Chance <span> X2 </span></p4>
+            <p4>• Handicape Europeens: 1 <span>(0-1)</span></p4>
         </div>
 
         <div class="case">
             <p>
-                Aujourd’hui -16:00
+                Aujourd’hui -20:30
             </p>
-            <p1>Calgiari Calcio - Bologne Fc</p1><br>
-            <p2>U5akie, Serie A</p2>
+            <p1>Cote d'Ivoire - Mozambique</p1><br>
+            <p2>International, Coupe d'Afrique des Nations</p2>
             <div class="bet-options">
                 <div class="option">
                     <span class="label">1</span>
-                    <span class="odd">Perde</span>
+                    <span class="odd">Gagne</span>
                 </div>
                 <div class="option draw">
                     <span class="label">X</span>
-                    <span class="odd">Gagne</span>
+                    <span class="odd">Perde</span>
                 </div>
                 <div class="option">
                     <span class="label">2</span>
-                    <span class="odd">Gagne</span>
+                    <span class="odd">Perde</span>
                 </div>
             </div>
-            <p4>• Double Chance <span> X2 </span></p4>
+            <p4>• Handicape Europeens: 1 <span>(0-1)</span></p4>
         </div>
 
         <div class="case">
             <p>
-                Aujourd’hui -16:00
+                Aujourd’hui -23:00
             </p>
-            <p1>Tottenham - Aston Villa</p1><br>
-            <p2>Angleterre, Premier Ligue</p2>
+            <p1>Cameroon - Gabon</p1><br>
+            <p2>International, Coupe d'Afrique des Nations</p2>
             <div class="bet-options">
                 <div class="option">
                     <span class="label">1</span>
@@ -691,22 +918,45 @@
                 </div>
                 <div class="option draw">
                     <span class="label">X</span>
-                    <span class="odd">Perde</span>
+                    <span class="odd">Parde</span>
                 </div>
                 <div class="option">
                     <span class="label">2</span>
                     <span class="odd">Gagne</span>
                 </div>
             </div>
-            <p4>• Double Chance <span> 12 </span></p4>
+            <p4>• 1er Mi Temps: 1 <span>Gagne</span></p4>
+        </div>
+        
+        <div class="case">
+            <p>
+                Aujourd’hui -15:30
+            </p>
+            <p1>Boluspor - Fethiyespor</p1><br>
+            <p2>Turquie, Coupe de Turquie</p2>
+            <div class="bet-options">
+                <div class="option">
+                    <span class="label">1</span>
+                    <span class="odd">Gagne</span>
+                </div>
+                <div class="option draw">
+                    <span class="label">X</span>
+                    <span class="odd">Gagne</span>
+                </div>
+                <div class="option">
+                    <span class="label">2</span>
+                    <span class="odd">Perde</span>
+                </div>
+            </div>
+            <p4>• Double chance: <span>1X</span></p4>
         </div>
 
         <div class="case">
             <p>
-                Aujourd’hui -17:15
+                Aujourd’hui -18:00
             </p>
-            <p1>Celta Vigo - Real Sociedad</p1><br>
-            <p2>Italie, Serie A </p2>
+            <p1>Ankara Keciorengucu - Beyoglu Yeni</p1><br>
+            <p2>Turquie, Coupe de Turquie</p2>
             <div class="bet-options">
                 <div class="option">
                     <span class="label">1</span>
@@ -714,22 +964,22 @@
                 </div>
                 <div class="option draw">
                     <span class="label">X</span>
-                    <span class="odd">Perde</span>
+                    <span class="odd">Gagne</span>
                 </div>
                 <div class="option">
                     <span class="label">2</span>
-                    <span class="odd">Gagne</span>
+                    <span class="odd">Perde</span>
                 </div>
             </div>
-            <p4>• Double Chance <span> 12 </span></p4>
+            <p4>• Double.chance : <span>1X</span></p4>
         </div>
 
         <div class="case">
             <p>
-                Aujourd’hui -17:30
+                Aujourd’hui -20:30
             </p>
-            <p1>Young boys - Fc St-Gall</p1><br>
-            <p2>Suise D1, Super Ligue </p2>
+            <p1>Samsunspor - Eyupspor</p1><br>
+            <p2>Turquie, Coupe de Turquie</p2>
             <div class="bet-options">
                 <div class="option">
                     <span class="label">1</span>
@@ -744,79 +994,68 @@
                     <span class="odd">Perde</span>
                 </div>
             </div>
-            <p4>• Youngs boys  <span> Gagne </span></p4>
-        </div>
-
-        <div class="case">
-            <p>
-                Aujourd’hui -18:30
-            </p>
-            <p1>Liverpool Fc - Manchester United Fc</p1><br>
-            <p2>Antleterre, Premier Ligue </p2>
-            <div class="bet-options">
-                <div class="option">
-                    <span class="label">1</span>
-                    <span class="odd">Gagne</span>
-                </div>
-                <div class="option draw">
-                    <span class="label">X</span>
-                    <span class="odd">Perde</span>
-                </div>
-                <div class="option">
-                    <span class="label">2</span>
-                    <span class="odd">Perde</span>
-                </div>
-            </div>
-            <p4>• Liverpool Fc <span> Gagne </span></p4>
-        </div>
-
-        <div class="case">
-            <p>
-                Aujourd’hui -21:45
-            </p>
-            <p1>Milan Ac - ACF Fiorentina</p1><br>
-            <p2>Italie, Serie A </p2>
-            <div class="bet-options">
-                <div class="option">
-                    <span class="label">1</span>
-                    <span class="odd">Gagne</span>
-                </div>
-                <div class="option draw">
-                    <span class="label">X</span>
-                    <span class="odd">Perde</span>
-                </div>
-                <div class="option">
-                    <span class="label">2</span>
-                    <span class="odd">Perde</span>
-                </div>
-            </div>
-            <p4>• Milan Ac <span> Gagne </span></p4>
+            <p4>• Nombre de buts inscrit : <span>1>5</span></p4>
         </div>
     </section>
 
-    <section id="aviator">
+<!--------//---------/ TOURS /---------//-------->
+    <section id="tours">
         <div class="page active" id="page-login">
             <div class="icon">
-                🔐
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 200" width="160" height="100">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="280" height="220">
+                        <defs>
+                            <!-- Dégradé rose/violet comme l’exemple -->
+                            <linearGradient id="zygrad" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#ff2975"/>
+                                <stop offset="100%" stop-color="#b300c2"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Cercle principal -->
+                        <circle cx="100" cy="94" r="55" fill="url(#zygrad)" />
+
+                        <path d="M65 70 H120 L80 110 L120 130"
+                            stroke="#E0E0E0"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            fill="none" />
+                    </svg>
+                </svg>
             </div>
             <div class="login-box">
-                <h5>Code d'Activation Requis</h5>
-                <input type="Email" id="Email Adress" placeholder="📧 Email Adress">
-                <input type="password" id="password" placeholder="🔒 Mot de passe">
+                <h1 class="title">Aviator V2.6.1</h1>
+                <h5>Code d'Activation</h5>
+                <p class="subtitle">Entrez les identifiants pour avoir des tours</p>
+            <div class="warning-box">
+            <span class="warning-icon">&#9888;</span><p class="warning-text">
+                ATTENTION : Cette prédiction est basée sur la strategie d'Eskel, elle n'est donc pas garantie à 100%.
+            </p>
+            <span class="warning-icon">&#9888;</span>
+            </div>
+                <input type="Email" id="Email Adress" placeholder="Email">
+                <input type="password" id="password" placeholder="Mot de passe">
                 <button onclick="login()">Login</button>
-                <div class="hint">
-                    🔰 Analyser avec porvably fair
-                </div>
             </div>
         </div>
+        
+<!------//-------/ NOTIFICATION /--------//------>
+    <div class="notification" id="downloadNotification">🔰
+    <div class="notification-text">
+        <h4>Analyser avec <span>Provably fair</span></h4>
+        <z>assistance des tours.</z>
+    </div>
+</div>
         <div class="page" id="page-main">
+            <h5>Strategies</h5>
             <div class="warning-box">
                 <span class="warning-icon">&#9888;</span><div class="warning-text">
                     ATTENTION : Veuillez suivre la strategie d'Eskel avant de calculer .
                 </div>
                 <span class="warning-icon">&#9888;</span>
             </div>
-            <h9>🔵 Depart cote manga :</h9>
+            <h4>🔵 Depart cote manga :</h4>
             <div class="teams">
                 <span>1) </span> Rehefa manga 1 no ao ampivonina violet, ka violet roa ny fiantombohany dia violet 2 koa ny fiafarany.
             </div>
@@ -829,9 +1068,6 @@
                 <span>3) </span> Rehefa mahita manga 5 mifanesy dia ao aorinany iny tsy maintsy misy tour violet na rose
             </div>
             <p1 class="strategie"><span1>Oh :</span1><span> 1.24x, 1.76x, 1.34x, 1.99x, 1.00x </span>✅</p1>
-            <div class="verifier">
-                <span>Fanamafisana :</span> Rehefa tsy manaraka an'ireo strategie ireo dia lasa diso cote angalana an'ilay tour tokony analysena enao, ka mamoka tour ratsy ilay prediction, ka mitandrema tsara.
-            </div>
             <h1 class="prediction-title">Résultat de la Prédiction</h1>
             <table>
                 <tr><th><label for="tourInput" class="label-with-icon">
@@ -868,6 +1104,8 @@
         </section>
 
         <section id="contact">
+            <h1 class="form-title">Contact <span>Form</span></h1>
+            <h2 class="texte">Veuillez completer les formulaires pour que nous aiderons a votre problemes .</h2>
             <form>
                 <h3>Envoyez-nous des messages</h3>
                 <label for="name" class="name">Nom complet :</label>
@@ -875,81 +1113,139 @@
                 <label for="subject" class="sujet">Sujet :</label>
                 <input type="text" id="subject">
                 <label for="message" class="msg">Message :</label>
-                <textarea id="message" rows="5"class="message" placeholder="envoyer nous des messages ..."></textarea>
+                <textarea id="message" rows="5"class="message" placeholder="Envoyer nous des messages ..."></textarea>
                 <button type="submit" class="submit">Envoyer le message</button>
             </form>
-        </section>
+    </section>
+        
+<!-------//--------/ SERVICES /--------//-------->  <section id="services">
+<div class="services-header fadeUp">
+<h2>Ce que nous offrons</h2>
+<p>
+Nous combinons expertise technique et vision stratégique pour vous fournir des solutions sur mesure.
+</p>
+</div>
+<div class="grid grid-3">
+<div class="service-card fadeUp">
+<div class="service-icon">
+💻
+</div>
+<h3>Développement Web</h3>
+<p>
+Des sites modernes et performants.
+</p>
+<ul>
+<lu>✔ Sites vitrines</lu><br>
+<lu>✔ E-commerce</lu><br>
+<lu>✔ Applications web</lu>
+</ul>
+</div>
+<div class="service-card fadeUp">
+<div class="service-icon">
+📱
+</div>
+<h3>Applications Mobiles</h3>
+<p>
+Expérience fluide sur toutes les plateformes.
+</p>
+<ul>
+<lu>✔ iOS et Android</lu><br>
+<lu>✔ Cross-platform</lu><br>
+<lu>✔ Apps d’entreprise</lu>
+</ul>
+</div>
+<div class="service-card fadeUp">
+<div class="service-icon">
+📊
+</div>
+<h3>Analyse de données</h3>
+<p>
+Exploitez vos données pour mieux décider.
+</p>
+<ul>
+<lu>✔ Business Intelligence</lu><br>
+<lu>✔ Machine Learning</lu><br>
+<lu>✔ Tableaux de bord</lu>
+</ul>
+</div>
+</div>
+</section>
 
-        <footer>
-            &copy; 2025 | Pronostiques.
-        </footer>
-    </body>
+<!--------//---------/ PIEDS /---------//-------->
+    <footer>
+        &copy; 2026 | Eskel Pronostiques.
+    </footer>
+</body>
 
-    <script>
-        //------// SECTION //------//
-        const sections = ["accueil", "pronostique", "aviator", "contact"];
-        function showSection(id) {
-            sections.forEach(sec => {
-                const el = document.getElementById(sec);
-                if (el) {
-                    el.classList.toggle("active", sec === id);
-                }
-            });
-        }
-        //------// FAQ TOOGLE //------//
-        document.querySelectorAll(".faq-question").forEach(btn=> {
-            btn.addEventListener("click", ()=> {
-                const answer = btn.nextElementSibling;
-                answer.style.display = answer.style.display === "block"?"none": "block";
-            });
+   <script>
+
+    //----------// SECTION //-----------//
+    const sections = ["accueil", "pronostique", "tours", "contact", "services"];
+    function showSection(id) {
+        sections.forEach(sec => {
+            const el = document.getElementById(sec);
+            if (el) {
+                el.classList.toggle("active", sec === id);
+            }
         });
-        //------// LOGIN //-------//
-        function login() {
-            const user = document.getElementById('Email Adress').value;
-            const pass = document.getElementById('password').value;
-            if (user === 'aviator@gmail.com' && pass === 'Z6XE90') {
-                document.getElementById('page-login').classList.remove('active');
-                document.getElementById('page-main').classList.add('active');
-            } else {
-                alert("Email Adress ou mot de passe incorrect");
-            }
-        }
-        function showSection(id) {
-            sections.forEach(sec => {
-                const el = document.getElementById(sec);
-                if (el) {
-                    el.classList.toggle("active", sec === id);
-                }
-            });
-        }
-        //------// CALCULE //------//
-        function calculer() {
-            const tour = parseInt(document.getElementById('tour-number').value);
-            const cote = document.getElementById('cote-value').value;
-            if (!tour || !cote.startsWith('x1.')) {
-                alert("Veuillez entrer une tour valider avec une côte minimum de X2.00");
-                return;
-            }
-            let results = [];
-            let start = (tour + 2 * 6 * 1) % 100;
-            for (let i = 0; i < 3; i++) {
-                results.push((start + i) % 100);
-            }
-            let html = '<h7>Tours prédicts :✅ </h7><ul>';
-            results.forEach(t => {
-                let tDisplay = t < 5 ? '00' + t: (t < 100 ? '***' + t: t);
-                html += `<li>🎯 TOURS <span>${tDisplay}</span><p>Cette tours n'est pas garentie a 100% <p></li><br><br>`;
-            });
-            html += '</ul>';
-            document.getElementById('result').innerHTML = html;
-            const pourcentage = Math.floor(Math.random() * (75 - 60 + 1)) + 60;
-            document.getElementById('percentage-fill').style.width = pourcentage + '%';
-        }
-        function switchLang(lang) {
-            alert("Fonction de changement de langue à implémenter (" + lang + ")");
-        }
-        window.addEventListener("DOMContentLoaded", () => {
-            showSection("accueil");
+    }
+    
+    //---------// FAQ TOOGLE //---------//
+    document.querySelectorAll(".faq-question").forEach(btn=> {
+        btn.addEventListener("click", ()=> {
+            const answer = btn.nextElementSibling;
+            answer.style.display = answer.style.display === "block"?"none": "block";
         });
+    });
+    
+    //-----------// LOGIN //-----------//
+    function login() {
+        const user = document.getElementById('Email Adress').value;
+        const pass = document.getElementById('password').value;
+        if (user === 'aviator@gmail.com' && pass === 'M2k90l') {
+            document.getElementById('page-login').classList.remove('active');
+            document.getElementById('page-main').classList.add('active');
+        } else {
+            alert("Email Adress ou mot de passe incorrect");
+        }
+    }
+    function showSection(id) {
+        sections.forEach(sec => {
+            const el = document.getElementById(sec);
+            if (el) {
+                el.classList.toggle("active", sec === id);
+            }
+        });
+    }
+    
+    //----------// CALCULE //---------//
+    function calculer() {
+        const tour = parseInt(document.getElementById('tour-number').value);
+        const cote = document.getElementById('cote-value').value;
+        if (!tour || !cote.startsWith('x1.')) {
+            alert("Veuillez entrer une tour valider avec une côte minimum de X2.00");
+            return;
+        }
+        let results = [];
+        let start = (tour + 2 * 6 * 1) % 100;
+        for (let i = 0; i < 3; i++) {
+            results.push((start + i) % 100);
+        }
+        let html = '<h7>Tours prédicts :✅ </h7><ul>';
+        results.forEach(t => {
+            let tDisplay = t < 5 ? '00' + t: (t < 100 ? '***' + t: t);
+            html += `<li>🎯 TOURS <span>${tDisplay}</span><p>Cette tours n'est pas garentie a 100% <p></li><br><br>`;
+        });
+        html += '</ul>';
+        document.getElementById('result').innerHTML = html;
+        const pourcentage = Math.floor(Math.random() * (75 - 60 + 1)) + 60;
+        document.getElementById('percentage-fill').style.width = pourcentage + '%';
+    }
+    function switchLang(lang) {
+        alert("Fonction de changement de langue à implémenter (" + lang + ")");
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+        showSection("accueil");
+    });
     </script>
 </html>
