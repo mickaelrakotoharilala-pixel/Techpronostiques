@@ -757,6 +757,148 @@
         color: #28a745;
         font-size: 19px;
     }
+
+    /*-------//------/ RESULTATS /-------//------*/
+    .Title{
+        text-align: center;
+        color: #40c4ff;
+        font-size: 18px;
+    }
+    .Title span{
+        color: white;
+    }
+    .score{
+        display: flex;
+    }
+    .nation{
+        width: 40%;
+    }
+    .International{
+        text-align: center;
+        background: red;
+        color: white;
+        width: 15%;
+        padding: 5px 1px;
+        border-radius: 4px;
+        font-size: 20px
+    }
+    /*------/ Configuration 1 /--------*/
+    .Resultat{
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+        background-color: transparent;
+        padding: 10px 3px;
+        border-radius: 6px;
+        margin: 10px;
+        outline: none;
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #40c4ff;
+    }
+    .buts{
+        margin-left: 50%;
+    }
+    .buts span{
+        color: red;
+    }
+    .buts span1{
+        color: red;
+    }
+    
+     /*------/ CoConfiguration 2 /--------*/
+    .clubs{
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+        background-color: transparent;
+        padding: 10px 3px;
+        border-radius: 6px;
+        margin: 10px;
+        outline: none;
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #40c4ff;
+    }
+    .goals{
+        margin-left: 50%;
+    }
+    .goals span{
+        color: red;
+    }
+    .goals span1{
+        color: green;
+    }
+    
+    
+    /*------/ Configuration 3 /--------*/
+    .stade{
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+        background-color: transparent;
+        padding: 10px 3px;
+        border-radius: 6px;
+        margin: 10px;
+        outline: none;
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #40c4ff;
+    }
+    .inscrits{
+        margin-left: 50%;
+    }
+    .inscrits span{
+        color: red;
+    }
+    .inscrits span1{
+        color: green;
+    }
+    
+    
+    /*------/ Configuration 4 /--------*/
+    .tableau{
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+        background-color: transparent;
+        padding: 10px 3px;
+        border-radius: 6px;
+        margin: 10px;
+        outline: none;
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #40c4ff;
+    }
+    .chiffres{
+        margin-left: 50%;
+    }
+    .chiffres span{
+        color: red;
+    }
+    .chiffres span1{
+        color: green;
+    }
+    
+    /*------/ Configuration 5 /--------*/
+    .equipes{
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+        background-color: transparent;
+        padding: 10px 3px;
+        border-radius: 6px;
+        margin: 10px;
+        outline: none;
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #40c4ff;
+    }
+    .terrains{
+        margin-left: 50%;
+    }
+    .terrains span{
+        color: red;
+    }
+    .terrains span1{
+        color: green;
+    }
+
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -773,7 +915,7 @@
         <nav>
             <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
             <a href="#Pronostiques" onclick="showSection('pronostique')">Pronostiques</a>
-            <a href="#Resultat" onclick="showSection('resultat')">Resultat</a>
+            <a href="#Resultat" onclick="showSection('resultat')">Resultats</a>
             <a href="#Tours" onclick="showSection('tours')">Tours</a>
             <a href="#contact" onclick="showSection('contact')">Contacts</a>
             <a href="#services" onclick="showSection('services')">Services</a>
@@ -1022,6 +1164,46 @@
         </div>
     </section>
 
+    <!--------//---------/ RESULTATS /---------//-------->
+    <section id="resultat">
+          <h1 class="title">🔴 RESULTATS DU PRONOSTIQUE <span>(26/12/25)</span></h1>
+          <h2 class="International">CAN</h2>
+    <div class="resultat">
+        <div class="score">
+            <p1 class="nation">Angola<br>Zimbabwe</p1>
+            <p1 class="buts"><span>1</span><br><span1>1</span1></p1>
+        </div>
+    </div>
+    
+    <div class="clubs">
+        <div class="score">
+            <p1 class="nation">Egypte<br>Afrique du Sud</p1>
+            <p1 class="goals"><span>0</span><br><span1>0</span1></p1>
+        </div>
+    </div>
+    
+    <div class="stade">
+        <div class="score">
+            <p1 class="nation">Zambie<br>Les Comores</p1>
+            <p1 class="inscrits"><span>0</span><br><span1>0</span1></p1>
+        </div>
+    </div>
+    
+    <div class="tableau">
+        <div class="score">
+            <p1 class="nation">Maroc<br>Mali</p1>
+            <p1 class="chiffres"><span>0</span><br><span1>0</span1></p1>
+        </div>
+    </div>
+    
+    <div class="equipes">
+        <div class="score">
+            <p1 class="nation">Angola<br>Zimbabwe</p1>
+            <p1 class="terrains"><span>0</span><br><span1>0</span1></p1>
+        </div>
+    </div>
+    </section>
+
 <!--------//---------/ TOURS /---------//-------->
     <section id="tours">
         <div class="page active" id="page-login">
@@ -1204,7 +1386,7 @@ Exploitez vos données pour mieux décider.
    <script>
 
     //----------// SECTION //-----------//
-    const sections = ["accueil", "pronostique", "tours", "contact", "services"];
+    const sections = ["accueil", "pronostique", "resultat", "tours", "contact", "services"];
     function showSection(id) {
         sections.forEach(sec => {
             const el = document.getElementById(sec);
